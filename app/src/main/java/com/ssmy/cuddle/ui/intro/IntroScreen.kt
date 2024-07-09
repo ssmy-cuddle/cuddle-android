@@ -1,5 +1,7 @@
 package com.ssmy.cuddle.ui.intro
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -12,13 +14,20 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.ssmy.cuddle.R
+import com.ssmy.cuddle.ui.theme.NPSFontFamily
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
+
 fun IntroScreen(navController: NavController, viewModel: IntroViewModel = koinViewModel()) {
     val state = viewModel.state.collectAsState().value
     val effect = remember { viewModel.effect }
@@ -36,21 +45,29 @@ fun IntroScreen(navController: NavController, viewModel: IntroViewModel = koinVi
     Box(
         modifier = Modifier
             .fillMaxSize()
-//            .background(painterResource(id = R.drawable.bg)), // 전체 배경 이미지
-//        contentAlignment = Alignment.Center
+            .background(Color.White),
+        contentAlignment = Alignment.Center
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacer(modifier = Modifier.height(124.dp))
-//            Image(painter = painterResource(id = R.drawable.logo), contentDescription = null)
+            Image(painter = painterResource(id = R.drawable.cuddle_logo), contentDescription = null)
             Spacer(modifier = Modifier.height(7.dp))
             Text(
                 "Cuddle",
                 fontSize = 32.sp,
-                fontWeight = FontWeight.Normal,
-//                fontFamily = FontFamily(Font(R.font.kookmin_regular)) // 국민연금체 폰트 추가
+                fontWeight = FontWeight.ExtraBold,
+                fontFamily = NPSFontFamily
             )
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun IntroScreenPreview() {
+    val navController = rememberNavController()
+    val viewModel = IntroViewModel()
+
+    IntroScreen(navController, viewModel)
 }

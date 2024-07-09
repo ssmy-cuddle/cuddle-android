@@ -2,9 +2,11 @@ package com.ssmy.cuddle.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.ssmy.cuddle.R
 
 // Set of Material typography styles to start with
 val Typography = Typography(
@@ -31,4 +33,10 @@ val Typography = Typography(
         letterSpacing = 0.5.sp
     )
     */
+)
+
+val NPSFontFamily = FontFamily(
+    Font(R.font.nps_font_regular, FontWeight.Normal),
+    Font(R.font.nps_font_bold, FontWeight.Bold),
+    Font(R.font.nps_font_extrabold, FontWeight.ExtraBold)
 )
