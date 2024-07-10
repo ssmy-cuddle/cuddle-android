@@ -35,7 +35,7 @@ class LoginViewModel : ViewModel() {
 //                    setEffect { LoginContract.Effect.ShowError(error.message ?: "Login failed") }
 //                } else if (token != null) {
 //                    // 토큰 저장 로직 (예: SharedPreferences)
-//                    setEffect { LoginContract.Effect.NavigateToMain }
+                    setEffect { LoginContract.Effect.NavigateToMain }
 //                }
 //            }
 //        }
