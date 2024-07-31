@@ -27,7 +27,7 @@ fun CuddleApp() {
     NavHost(navController = navController, startDestination = "intro") {
         composable("intro") { IntroScreen(navController = navController) }
         composable("login") { LoginScreen(navController = navController) }
-        composable("main") { MainScreen(navController = navController) }
+//        composable("main") { MainScreen(navController = navController) }
     }
 }
 
