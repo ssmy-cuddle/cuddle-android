@@ -4,6 +4,9 @@ plugins {
     id("kotlin-kapt")
 }
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
 android {
     namespace = "com.ssmy.cuddle"
     compileSdkVersion 34
@@ -20,9 +23,21 @@ android {
     }
 
     buildTypes {
+        debug{
+            resValue "string", "KAKAO_APP_KEY", properties["KAKAO_APP_KEY"]
+            buildConfigField "String", "KAKAO_APP_KEY", properties["KAKAO_APP_KEY"]
+            resValue "string", "KAKAO_SCHEME", properties["KAKAO_SCHEME"]
+            resValue "string", "KAKAO_HOST", properties["KAKAO_HOST"]
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            resValue "string", "KAKAO_APP_KEY", properties["KAKAO_APP_KEY"]
+            buildConfigField "String", "KAKAO_APP_KEY", properties["KAKAO_APP_KEY"]
+            resValue "string", "KAKAO_SCHEME", properties["KAKAO_SCHEME"]
+            resValue "string", "KAKAO_HOST", properties["KAKAO_HOST"]
         }
     }
 
@@ -61,6 +76,9 @@ dependencies {
 
     // DataStore
     implementation "androidx.datastore:datastore-preferences:1.0.0"
+
+    // kakao
+    implementation "com.kakao.sdk:v2-all:2.20.3" // 전체 모듈 설치, 2.11.0 버전부터 지원
 
     // Unit Testing
     testImplementation 'junit:junit:4.13.2'
