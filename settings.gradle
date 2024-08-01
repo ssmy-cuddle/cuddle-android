@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "cuddle-android"
-include ':app'
+include(":app")

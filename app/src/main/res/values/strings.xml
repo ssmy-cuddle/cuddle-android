@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Cuddle</string>
+    <string name="login_kakao">카카오 로그인</string>
+    <string name="login_docs">발에서 마음까지</string>
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.ssmy.cuddle.ui.data
+package com.ssmy.cuddle.data
 
 import android.content.Context
 import android.util.Base64
@@ -39,7 +39,7 @@ val Context.appSettingsDataStore: DataStore<Preferences> by preferencesDataStore
  * - DataStoreManager.putAppSetting(context, "theme", "dark")
  * - DataStoreManager.getAppSetting(context, "theme")
  *
- * @autor wookjin
+ * @author wookjin
  * @since 7/11/24
  **/
 object DataStoreKeys {
@@ -106,7 +106,6 @@ object DataStoreManager {
                         value.forEach { (mapKey, mapValue) -> jsonObject.put(mapKey.toString(), mapValue) }
                         preferences[stringPreferencesKey(PREFIX_MAP + key)] = jsonObject.toString()
                     }
-
                     is ByteArray -> preferences[stringPreferencesKey(PREFIX_BYTE_ARRAY + key)] = Base64.encodeToString(value, Base64.DEFAULT)
                     else -> throw IllegalArgumentException("Unsupported data type")
                 }
@@ -128,12 +127,10 @@ object DataStoreManager {
                     val jsonArray = JSONArray(jsonString)
                     List(jsonArray.length()) { index -> jsonArray.get(index) } as T
                 } ?: defaultValue
-
                 Map::class -> preferences[stringPreferencesKey(PREFIX_MAP + key)]?.let { jsonString ->
                     val jsonObject = JSONObject(jsonString)
                     jsonObject.keys().asSequence().associateWith { jsonObject.get(it) } as T
                 } ?: defaultValue
-
                 ByteArray::class -> preferences[stringPreferencesKey(PREFIX_BYTE_ARRAY + key)]?.let { Base64.decode(it, Base64.DEFAULT) as T } ?: defaultValue
                 else -> throw IllegalArgumentException("Unsupported data type")
             }
