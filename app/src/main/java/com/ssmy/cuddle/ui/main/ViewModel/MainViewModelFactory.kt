@@ -1,4 +1,4 @@
-package com.ssmy.cuddle.ui.main
+package com.ssmy.cuddle.ui.main.ViewModel
 
 import android.app.Application
 import androidx.lifecycle.ViewModel

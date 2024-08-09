@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.ssmy.cuddle.ui.main.home.models.HomeItemData.DailyItem" />
+        <variable
+            name="viewModel"
+            type="com.ssmy.cuddle.ui.main.home.viewModels.DailyViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_item"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@{item.imageResId}"
+            android:background="@drawable/bg_rounded_image" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{item.title}"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="4dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="4dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/sample_image2"
+                android:background="@drawable/bg_rounded_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{item.nickname}"
+                android:textSize="10sp"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:src='@{item.isLiked ? @drawable/sample_image1 : @drawable/sample_image2}'
+                android:padding="4dp"
+                android:onClick="@{() -> viewModel.toggleLike(item)}" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>
