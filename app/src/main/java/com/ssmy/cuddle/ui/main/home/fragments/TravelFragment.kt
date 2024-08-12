@@ -38,4 +38,9 @@ class TravelFragment : Fragment() {
             (binding.recyclerView.adapter as TravelItemAdapter).submitList(items)
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        binding.root.requestLayout()
+    }
 }

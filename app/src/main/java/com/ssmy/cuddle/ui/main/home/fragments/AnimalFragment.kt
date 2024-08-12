@@ -40,4 +40,9 @@ class AnimalFragment : Fragment() {
             (binding.recyclerView.adapter as AnimalItemAdapter).submitList(items)
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        binding.root.requestLayout()
+    }
 }

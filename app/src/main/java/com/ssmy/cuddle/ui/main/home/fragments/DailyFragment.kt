@@ -38,4 +38,9 @@ class DailyFragment : Fragment() {
             (binding.recyclerView.adapter as DailyItemAdapter).submitList(items)
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        binding.root.requestLayout()
+    }
 }

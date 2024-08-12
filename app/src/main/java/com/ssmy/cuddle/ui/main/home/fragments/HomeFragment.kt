@@ -58,6 +58,7 @@ class HomeFragment : Fragment() {
 
         binding.contentTabRecyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            setHasFixedSize(true)
             adapter = contentTabAdapter
         }
 
