@@ -9,6 +9,8 @@ import androidx.core.view.updatePadding
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.LabelVisibilityMode
+import com.google.android.material.navigation.NavigationBarView
 import com.ssmy.cuddle.R
 import com.ssmy.cuddle.data.DataStoreManager
 import com.ssmy.cuddle.databinding.ActivityMainBinding
@@ -33,6 +35,7 @@ class MainActivity : BaseActivity<MainViewModel>() {
 
         val navController = findNavController(R.id.nav_host_fragment)
         binding.bottomNavigation.setupWithNavController(navController)
+        binding.bottomNavigation.itemIconTintList = null
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
             val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
