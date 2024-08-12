@@ -65,7 +65,7 @@
                 android:layout_gravity="end"
                 android:onClick="@{() -> viewModel.toggleLike(item)}"
                 android:padding="4dp"
-                android:src='@{item.isLiked ? @drawable/sample_image1 : @drawable/sample_image2}' />
+                android:src='@{item.isLiked ? @drawable/ic_heart_filled : @drawable/ic_heart_outline}' />
         </LinearLayout>
     </LinearLayout>
 </layout>
