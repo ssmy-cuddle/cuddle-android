@@ -1,6 +1,7 @@
 package com.ssmy.cuddle.ui.main.home.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -62,6 +63,7 @@ class HomeFragment : Fragment() {
         val tabTitles = listOf("일상", "여행기", "Cuddle 과 함께하는 동물들")
 
         customTabAdapter = CustomTabAdapter(tabTitles) { position ->
+            Log.d("HomeFragment", "Tab selected: $position")
             binding.viewPager.currentItem = position
         }
 
@@ -76,12 +78,12 @@ class HomeFragment : Fragment() {
 
         binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
+                Log.d("HomeFragment", "ViewPager page selected: $position")
                 if (customTabAdapter.selectedPosition != position) {
                     val oldPosition = customTabAdapter.selectedPosition
                     customTabAdapter.selectedPosition = position
                     customTabAdapter.notifyItemChanged(oldPosition)
                     customTabAdapter.notifyItemChanged(position)
-
                     binding.customTabRecyclerView.smoothScrollToPosition(position)
                 }
             }
