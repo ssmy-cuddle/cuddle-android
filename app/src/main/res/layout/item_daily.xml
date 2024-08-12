@@ -6,6 +6,7 @@
         <variable
             name="item"
             type="com.ssmy.cuddle.ui.main.home.models.HomeItemData.DailyItem" />
+
         <variable
             name="viewModel"
             type="com.ssmy.cuddle.ui.main.home.viewModels.DailyViewModel" />
@@ -14,54 +15,57 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="8dp"
         android:background="@drawable/bg_item"
-        android:padding="8dp">
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:background="@drawable/bg_rounded_image"
             android:scaleType="centerCrop"
-            android:src="@{item.imageResId}"
-            android:background="@drawable/bg_rounded_image" />
+            android:src="@{item.imageResId}" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:text="@{item.title}"
-            android:textSize="12sp"
             android:textColor="@color/black"
-            android:layout_marginTop="4dp" />
+            android:textSize="12sp" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginTop="4dp"
             android:gravity="center_vertical"
-            android:layout_marginTop="4dp">
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/sample_image2"
-                android:background="@drawable/bg_rounded_icon"/>
+                android:background="@drawable/bg_rounded_icon"
+                android:src="@drawable/sample_image2" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{item.nickname}"
-                android:textSize="10sp"
                 android:layout_marginStart="4dp"
-                android:textColor="@color/black" />
+                android:text="@{item.nickname}"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:src='@{item.isLiked ? @drawable/sample_image1 : @drawable/sample_image2}'
+                android:onClick="@{() -> viewModel.toggleLike(item)}"
                 android:padding="4dp"
-                android:onClick="@{() -> viewModel.toggleLike(item)}" />
+                android:src='@{item.isLiked ? @drawable/sample_image1 : @drawable/sample_image2}' />
         </LinearLayout>
     </LinearLayout>
 </layout>

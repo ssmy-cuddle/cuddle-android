@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.ssmy.cuddle.ui.main.home.viewModels.HomeViewModel" />
@@ -126,8 +127,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="14dp"
                         android:clipToPadding="false"
-                        android:paddingStart="18dp"
-                        android:paddingEnd="18dp"
                         tools:listitem="@layout/item_cuddle_original" />
 
                     <!-- Banner Box -->
@@ -142,20 +141,18 @@
 
                     <!-- Content -->
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/customTabRecyclerView"
+                        android:id="@+id/contentTabRecyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:clipToPadding="false"
-                        android:paddingStart="18dp"
-                        android:paddingEnd="18dp"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
                     <!-- ViewPager2 for fragments -->
                     <androidx.viewpager2.widget.ViewPager2
                         android:id="@+id/viewPager"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>

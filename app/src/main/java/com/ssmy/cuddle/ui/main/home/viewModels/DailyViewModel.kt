@@ -15,8 +15,10 @@ class DailyViewModel : ViewModel() {
 
     private val _dailyItems = MutableLiveData<List<HomeItemData.DailyItem>>().apply {
         value = listOf(
-            HomeItemData.DailyItem("Daily Title 1", "User 1", R.drawable.sample_image1, false),
-            HomeItemData.DailyItem("Daily Title 2", "User 2", R.drawable.sample_image2, true)
+            HomeItemData.DailyItem("일상 제목 1", "사용자 1", R.drawable.sample_image1, false),
+            HomeItemData.DailyItem("일상 제목 2", "사용자 2", R.drawable.sample_image2, true),
+            HomeItemData.DailyItem("일상 제목 3", "사용자 3", R.drawable.sample_image1, false),
+            HomeItemData.DailyItem("일상 제목 4", "사용자 4", R.drawable.sample_image2, true)
         )
     }
     val dailyItems: LiveData<List<HomeItemData.DailyItem>> = _dailyItems
