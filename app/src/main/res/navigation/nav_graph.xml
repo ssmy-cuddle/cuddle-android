@@ -7,31 +7,31 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.ssmy.cuddle.ui.main.home.view.fragments.HomeFragment"
+        android:name="com.ssmy.cuddle.ui.main.contents.home.view.fragments.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_journey"
-        android:name="com.ssmy.cuddle.ui.main.journey.fragments.JourneyFragment"
+        android:name="com.ssmy.cuddle.ui.main.contents.journey.JourneyFragment"
         android:label="Journey"
         tools:layout="@layout/fragment_journey" />
 
     <fragment
         android:id="@+id/nav_community"
-        android:name="com.ssmy.cuddle.ui.main.community.view.fragments.CommunityFragment"
+        android:name="com.ssmy.cuddle.ui.main.contents.community.view.fragments.CommunityFragment"
         android:label="Community"
         tools:layout="@layout/fragment_community" />
 
     <fragment
         android:id="@+id/nav_donate"
-        android:name="com.ssmy.cuddle.ui.main.donate.fragments.DonateFragment"
+        android:name="com.ssmy.cuddle.ui.main.contents.donate.DonateFragment"
         android:label="Donate"
         tools:layout="@layout/fragment_donate" />
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.ssmy.cuddle.ui.main.profile.fragments.ProfileFragment"
+        android:name="com.ssmy.cuddle.ui.main.contents.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

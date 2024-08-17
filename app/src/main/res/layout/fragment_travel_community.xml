@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.community.view.fragments.TravelFragment">
+    tools:context=".ui.main.contents.community.view.fragments.TravelFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
