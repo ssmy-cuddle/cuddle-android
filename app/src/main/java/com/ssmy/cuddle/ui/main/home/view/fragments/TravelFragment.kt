@@ -1,26 +1,26 @@
 package com.ssmy.cuddle.ui.main.home.view.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ssmy.cuddle.databinding.FragmentTravelBinding
-import com.ssmy.cuddle.ui.main.home.view.adapters.TravelItemAdapter
+import com.ssmy.cuddle.databinding.FragmentTravelMainBinding
 import com.ssmy.cuddle.ui.main.home.model.data.viewmodel.TravelViewModel
+import com.ssmy.cuddle.ui.main.home.view.adapters.TravelItemAdapter
 
 class TravelFragment : Fragment() {
 
     private val viewModel: TravelViewModel by viewModels()
-    private lateinit var binding: FragmentTravelBinding
+    private lateinit var binding: FragmentTravelMainBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentTravelBinding.inflate(inflater, container, false)
+        binding = FragmentTravelMainBinding.inflate(inflater, container, false)
         return binding.root
     }
 

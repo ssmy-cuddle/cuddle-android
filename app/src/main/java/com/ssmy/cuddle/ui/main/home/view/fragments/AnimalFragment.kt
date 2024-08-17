@@ -8,20 +8,20 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.ssmy.cuddle.databinding.FragmentAnimalBinding
-import com.ssmy.cuddle.ui.main.home.view.adapters.AnimalItemAdapter
+import com.ssmy.cuddle.databinding.FragmentAnimalMainBinding
 import com.ssmy.cuddle.ui.main.home.model.data.viewmodel.AnimalViewModel
+import com.ssmy.cuddle.ui.main.home.view.adapters.AnimalItemAdapter
 
 class AnimalFragment : Fragment() {
 
     private val viewModel: AnimalViewModel by viewModels()
-    private lateinit var binding: FragmentAnimalBinding
+    private lateinit var binding: FragmentAnimalMainBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentAnimalBinding.inflate(inflater, container, false)
+        binding = FragmentAnimalMainBinding.inflate(inflater, container, false)
         return binding.root
     }
 
