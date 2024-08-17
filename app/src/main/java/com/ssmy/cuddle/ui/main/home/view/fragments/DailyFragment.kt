@@ -7,20 +7,20 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import com.ssmy.cuddle.databinding.FragmentDailyBinding
-import com.ssmy.cuddle.ui.main.home.view.adapters.DailyItemAdapter
+import com.ssmy.cuddle.databinding.FragmentDailyHomeBinding
 import com.ssmy.cuddle.ui.main.home.model.data.viewmodel.DailyViewModel
+import com.ssmy.cuddle.ui.main.home.view.adapters.DailyItemAdapter
 
 class DailyFragment : Fragment() {
 
     private val viewModel: DailyViewModel by viewModels()
-    private lateinit var binding: FragmentDailyBinding
+    private lateinit var binding: FragmentDailyHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentDailyBinding.inflate(inflater, container, false)
+        binding = FragmentDailyHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 

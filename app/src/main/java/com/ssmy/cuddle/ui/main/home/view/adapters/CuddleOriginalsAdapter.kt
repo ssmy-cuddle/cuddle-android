@@ -13,12 +13,14 @@ import com.ssmy.cuddle.ui.main.home.model.data.HomeItemData
  * @author wookjin
  * @since 8/8/24
  **/
-class CuddleOriginalsAdapter : ListAdapter<HomeItemData.CuddleOriginalItem, CuddleOriginalsAdapter.ViewHolder>(
-    CuddleOriginalDiffCallback()
-) {
+class CuddleOriginalsAdapter :
+    ListAdapter<HomeItemData.CuddleOriginalItem, CuddleOriginalsAdapter.ViewHolder>(
+        CuddleOriginalDiffCallback()
+    ) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemCuddleOriginalBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemCuddleOriginalBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -26,7 +28,8 @@ class CuddleOriginalsAdapter : ListAdapter<HomeItemData.CuddleOriginalItem, Cudd
         holder.bind(getItem(position))
     }
 
-    class ViewHolder(private val binding: ItemCuddleOriginalBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ItemCuddleOriginalBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: HomeItemData.CuddleOriginalItem) {
             binding.item = item
             binding.executePendingBindings()
@@ -34,11 +37,17 @@ class CuddleOriginalsAdapter : ListAdapter<HomeItemData.CuddleOriginalItem, Cudd
     }
 
     class CuddleOriginalDiffCallback : DiffUtil.ItemCallback<HomeItemData.CuddleOriginalItem>() {
-        override fun areItemsTheSame(oldItem: HomeItemData.CuddleOriginalItem, newItem: HomeItemData.CuddleOriginalItem): Boolean {
+        override fun areItemsTheSame(
+            oldItem: HomeItemData.CuddleOriginalItem,
+            newItem: HomeItemData.CuddleOriginalItem
+        ): Boolean {
             return oldItem.title == newItem.title
         }
 
-        override fun areContentsTheSame(oldItem: HomeItemData.CuddleOriginalItem, newItem: HomeItemData.CuddleOriginalItem): Boolean {
+        override fun areContentsTheSame(
+            oldItem: HomeItemData.CuddleOriginalItem,
+            newItem: HomeItemData.CuddleOriginalItem
+        ): Boolean {
             return oldItem == newItem
         }
     }

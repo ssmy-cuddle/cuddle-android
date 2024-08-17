@@ -26,7 +26,8 @@ class TravelItemAdapter : ListAdapter<HomeItemData.TravelItem, TravelItemAdapter
         holder.bind(getItem(position))
     }
 
-    class ViewHolder(private val binding: ItemTravelBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ItemTravelBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: HomeItemData.TravelItem) {
             binding.item = item
             binding.executePendingBindings()
@@ -34,11 +35,17 @@ class TravelItemAdapter : ListAdapter<HomeItemData.TravelItem, TravelItemAdapter
     }
 
     class TravelDiffCallback : DiffUtil.ItemCallback<HomeItemData.TravelItem>() {
-        override fun areItemsTheSame(oldItem: HomeItemData.TravelItem, newItem: HomeItemData.TravelItem): Boolean {
+        override fun areItemsTheSame(
+            oldItem: HomeItemData.TravelItem,
+            newItem: HomeItemData.TravelItem
+        ): Boolean {
             return oldItem.title == newItem.title
         }
 
-        override fun areContentsTheSame(oldItem: HomeItemData.TravelItem, newItem: HomeItemData.TravelItem): Boolean {
+        override fun areContentsTheSame(
+            oldItem: HomeItemData.TravelItem,
+            newItem: HomeItemData.TravelItem
+        ): Boolean {
             return oldItem == newItem
         }
     }

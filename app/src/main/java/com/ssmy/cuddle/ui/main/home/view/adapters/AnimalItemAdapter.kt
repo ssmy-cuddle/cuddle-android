@@ -26,7 +26,8 @@ class AnimalItemAdapter : ListAdapter<HomeItemData.AnimalItem, AnimalItemAdapter
         holder.bind(getItem(position))
     }
 
-    class ViewHolder(private val binding: ItemAnimalBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ItemAnimalBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: HomeItemData.AnimalItem) {
             binding.item = item
             binding.executePendingBindings()
@@ -34,11 +35,17 @@ class AnimalItemAdapter : ListAdapter<HomeItemData.AnimalItem, AnimalItemAdapter
     }
 
     class AnimalDiffCallback : DiffUtil.ItemCallback<HomeItemData.AnimalItem>() {
-        override fun areItemsTheSame(oldItem: HomeItemData.AnimalItem, newItem: HomeItemData.AnimalItem): Boolean {
+        override fun areItemsTheSame(
+            oldItem: HomeItemData.AnimalItem,
+            newItem: HomeItemData.AnimalItem
+        ): Boolean {
             return oldItem.title == newItem.title
         }
 
-        override fun areContentsTheSame(oldItem: HomeItemData.AnimalItem, newItem: HomeItemData.AnimalItem): Boolean {
+        override fun areContentsTheSame(
+            oldItem: HomeItemData.AnimalItem,
+            newItem: HomeItemData.AnimalItem
+        ): Boolean {
             return oldItem == newItem
         }
     }

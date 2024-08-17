@@ -3,7 +3,7 @@ package com.ssmy.cuddle.ui.main.home.view.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ssmy.cuddle.databinding.ItemContentTabBinding
+import com.ssmy.cuddle.databinding.ItemHomeContentTabBinding
 
 /**
  * doc 주석
@@ -18,7 +18,8 @@ class HomeContentTabAdapter(
     var selectedPosition = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemContentTabBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemHomeContentTabBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -28,7 +29,8 @@ class HomeContentTabAdapter(
 
     override fun getItemCount(): Int = tabTitles.size
 
-    inner class ViewHolder(private val binding: ItemContentTabBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(private val binding: ItemHomeContentTabBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(title: String, isSelected: Boolean) {
             binding.tabText.text = title
             binding.tabText.isSelected = isSelected

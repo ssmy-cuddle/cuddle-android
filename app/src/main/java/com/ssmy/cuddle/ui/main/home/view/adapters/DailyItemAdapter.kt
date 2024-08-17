@@ -26,7 +26,8 @@ class DailyItemAdapter : ListAdapter<HomeItemData.DailyItem, DailyItemAdapter.Vi
         holder.bind(getItem(position))
     }
 
-    class ViewHolder(private val binding: ItemDailyBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ItemDailyBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: HomeItemData.DailyItem) {
             binding.item = item
             binding.executePendingBindings()
@@ -34,11 +35,17 @@ class DailyItemAdapter : ListAdapter<HomeItemData.DailyItem, DailyItemAdapter.Vi
     }
 
     class DailyDiffCallback : DiffUtil.ItemCallback<HomeItemData.DailyItem>() {
-        override fun areItemsTheSame(oldItem: HomeItemData.DailyItem, newItem: HomeItemData.DailyItem): Boolean {
+        override fun areItemsTheSame(
+            oldItem: HomeItemData.DailyItem,
+            newItem: HomeItemData.DailyItem
+        ): Boolean {
             return oldItem.title == newItem.title // 기본 비교 기준
         }
 
-        override fun areContentsTheSame(oldItem: HomeItemData.DailyItem, newItem: HomeItemData.DailyItem): Boolean {
+        override fun areContentsTheSame(
+            oldItem: HomeItemData.DailyItem,
+            newItem: HomeItemData.DailyItem
+        ): Boolean {
             return oldItem == newItem
         }
     }
