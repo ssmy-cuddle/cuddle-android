@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ssmy.cuddle.databinding.FragmentAnimalBinding
 import com.ssmy.cuddle.ui.main.home.adapters.AnimalItemAdapter
-import com.ssmy.cuddle.ui.main.home.viewModels.AnimalViewModel
+import com.ssmy.cuddle.ui.main.home.viewmodel.AnimalViewModel
 
 class AnimalFragment : Fragment() {
 

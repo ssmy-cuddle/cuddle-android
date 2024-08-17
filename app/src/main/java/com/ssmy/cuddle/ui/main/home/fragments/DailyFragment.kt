@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ssmy.cuddle.databinding.FragmentDailyBinding
 import com.ssmy.cuddle.ui.main.home.adapters.DailyItemAdapter
-import com.ssmy.cuddle.ui.main.home.viewModels.DailyViewModel
+import com.ssmy.cuddle.ui.main.home.viewmodel.DailyViewModel
 
 class DailyFragment : Fragment() {
 

@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ssmy.cuddle.databinding.FragmentTravelBinding
 import com.ssmy.cuddle.ui.main.home.adapters.TravelItemAdapter
-import com.ssmy.cuddle.ui.main.home.viewModels.TravelViewModel
+import com.ssmy.cuddle.ui.main.home.viewmodel.TravelViewModel
 
 class TravelFragment : Fragment() {
 
