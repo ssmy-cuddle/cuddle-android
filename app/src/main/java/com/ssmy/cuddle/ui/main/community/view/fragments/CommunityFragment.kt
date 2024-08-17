@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.ssmy.cuddle.R
 import com.ssmy.cuddle.databinding.FragmentCommunityBinding
 import com.ssmy.cuddle.ui.main.community.model.data.CommunityItemData
-import com.ssmy.cuddle.ui.main.community.model.viewmodel.CommunityViewModel
+import com.ssmy.cuddle.ui.main.community.viewmodel.CommunityViewModel
 import com.ssmy.cuddle.ui.main.community.view.adapters.CommunityContentTabAdapter
 
 class CommunityFragment : Fragment() {

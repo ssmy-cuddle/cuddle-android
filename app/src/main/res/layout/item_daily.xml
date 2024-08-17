@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.ssmy.cuddle.ui.main.home.model.viewmodel.DailyViewModel" />
+            type="com.ssmy.cuddle.ui.main.home.viewmodel.DailyViewModel" />
     </data>
 
     <LinearLayout
