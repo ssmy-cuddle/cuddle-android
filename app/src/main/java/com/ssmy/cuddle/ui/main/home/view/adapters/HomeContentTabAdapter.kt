@@ -10,10 +10,10 @@ import com.ssmy.cuddle.databinding.ItemContentTabBinding
  * @author wookjin
  * @since 8/8/24
  **/
-class ContentTabAdapter(
+class HomeContentTabAdapter(
     private val tabTitles: List<String>,
     private val onTabSelected: (position: Int) -> Unit
-) : RecyclerView.Adapter<ContentTabAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<HomeContentTabAdapter.ViewHolder>() {
 
     var selectedPosition = 0
 

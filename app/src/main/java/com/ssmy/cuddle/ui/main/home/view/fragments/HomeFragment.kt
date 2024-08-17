@@ -10,9 +10,9 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.ssmy.cuddle.databinding.FragmentHomeBinding
-import com.ssmy.cuddle.ui.main.home.view.adapters.ContentTabAdapter
+import com.ssmy.cuddle.ui.main.home.view.adapters.HomeContentTabAdapter
 import com.ssmy.cuddle.ui.main.home.view.adapters.CuddleOriginalsAdapter
-import com.ssmy.cuddle.ui.main.home.view.adapters.ContentViewPagerAdapter
+import com.ssmy.cuddle.ui.main.home.view.adapters.HomeContentViewPagerAdapter
 import com.ssmy.cuddle.ui.main.home.model.data.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment() {
@@ -51,7 +51,7 @@ class HomeFragment : Fragment() {
 
     private fun setupContent() {
         val tabTitles = listOf("일상", "여행기", "Cuddle 과 함께하는 동물들")
-        val contentTabAdapter = ContentTabAdapter(tabTitles) { position ->
+        val homeContentTabAdapter = HomeContentTabAdapter(tabTitles) { position ->
             Log.d("HomeFragment", "Tab selected: $position")
             binding.contentViewPager.currentItem = position
         }
@@ -59,21 +59,21 @@ class HomeFragment : Fragment() {
         binding.contentTabRecyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             setHasFixedSize(true)
-            adapter = contentTabAdapter
+            adapter = homeContentTabAdapter
         }
 
 
-        val adapter = ContentViewPagerAdapter(this)
+        val adapter = HomeContentViewPagerAdapter(this)
         binding.contentViewPager.adapter = adapter
 
         binding.contentViewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 Log.d("HomeFragment", "ViewPager page selected: $position")
-                if (contentTabAdapter.selectedPosition != position) {
-                    val oldPosition = contentTabAdapter.selectedPosition
-                    contentTabAdapter.selectedPosition = position
-                    contentTabAdapter.notifyItemChanged(oldPosition)
-                    contentTabAdapter.notifyItemChanged(position)
+                if (homeContentTabAdapter.selectedPosition != position) {
+                    val oldPosition = homeContentTabAdapter.selectedPosition
+                    homeContentTabAdapter.selectedPosition = position
+                    homeContentTabAdapter.notifyItemChanged(oldPosition)
+                    homeContentTabAdapter.notifyItemChanged(position)
                     binding.contentTabRecyclerView.smoothScrollToPosition(position)
                 }
             }

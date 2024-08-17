@@ -11,7 +11,7 @@ import com.ssmy.cuddle.ui.main.home.view.fragments.TravelFragment
  * @author wookjin
  * @since 8/8/24
  **/
-class ContentViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
+class HomeContentViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
     override fun getItemCount(): Int = 3
 
