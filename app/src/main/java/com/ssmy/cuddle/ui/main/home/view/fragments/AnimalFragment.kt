@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ssmy.cuddle.databinding.FragmentAnimalMainBinding
-import com.ssmy.cuddle.ui.main.home.model.data.viewmodel.AnimalViewModel
+import com.ssmy.cuddle.ui.main.home.model.viewmodel.AnimalViewModel
 import com.ssmy.cuddle.ui.main.home.view.adapters.AnimalItemAdapter
 
 class AnimalFragment : Fragment() {
