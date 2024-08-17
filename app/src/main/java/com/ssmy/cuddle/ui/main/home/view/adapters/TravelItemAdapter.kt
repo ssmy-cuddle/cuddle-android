@@ -1,4 +1,4 @@
-package com.ssmy.cuddle.ui.main.home.adapters
+package com.ssmy.cuddle.ui.main.home.view.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,14 +6,16 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.ssmy.cuddle.databinding.ItemTravelBinding
-import com.ssmy.cuddle.ui.main.home.models.HomeItemData
+import com.ssmy.cuddle.ui.main.home.model.data.HomeItemData
 
 /**
  * doc 주석
  * @author wookjin
  * @since 8/8/24
  **/
-class TravelItemAdapter : ListAdapter<HomeItemData.TravelItem, TravelItemAdapter.ViewHolder>(TravelDiffCallback()) {
+class TravelItemAdapter : ListAdapter<HomeItemData.TravelItem, TravelItemAdapter.ViewHolder>(
+    TravelDiffCallback()
+) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemTravelBinding.inflate(LayoutInflater.from(parent.context), parent, false)

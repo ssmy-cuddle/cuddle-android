@@ -1,4 +1,4 @@
-package com.ssmy.cuddle.ui.main.home.fragments
+package com.ssmy.cuddle.ui.main.home.view.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -10,10 +10,10 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.ssmy.cuddle.databinding.FragmentHomeBinding
-import com.ssmy.cuddle.ui.main.home.adapters.ContentTabAdapter
-import com.ssmy.cuddle.ui.main.home.adapters.CuddleOriginalsAdapter
-import com.ssmy.cuddle.ui.main.home.adapters.ContentViewPagerAdapter
-import com.ssmy.cuddle.ui.main.home.viewmodel.HomeViewModel
+import com.ssmy.cuddle.ui.main.home.view.adapters.ContentTabAdapter
+import com.ssmy.cuddle.ui.main.home.view.adapters.CuddleOriginalsAdapter
+import com.ssmy.cuddle.ui.main.home.view.adapters.ContentViewPagerAdapter
+import com.ssmy.cuddle.ui.main.home.model.data.viewmodel.HomeViewModel
 
 class HomeFragment : Fragment() {
 

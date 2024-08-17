@@ -1,4 +1,4 @@
-package com.ssmy.cuddle.ui.main.home.adapters
+package com.ssmy.cuddle.ui.main.home.view.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,14 +6,16 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.ssmy.cuddle.databinding.ItemDailyBinding
-import com.ssmy.cuddle.ui.main.home.models.HomeItemData
+import com.ssmy.cuddle.ui.main.home.model.data.HomeItemData
 
 /**
  * doc 주석
  * @author wookjin
  * @since 8/8/24
  **/
-class DailyItemAdapter : ListAdapter<HomeItemData.DailyItem, DailyItemAdapter.ViewHolder>(DailyDiffCallback()) {
+class DailyItemAdapter : ListAdapter<HomeItemData.DailyItem, DailyItemAdapter.ViewHolder>(
+    DailyDiffCallback()
+) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemDailyBinding.inflate(LayoutInflater.from(parent.context), parent, false)

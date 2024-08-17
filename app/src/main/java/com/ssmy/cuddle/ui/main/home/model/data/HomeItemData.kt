@@ -1,4 +1,4 @@
-package com.ssmy.cuddle.ui.main.home.models
+package com.ssmy.cuddle.ui.main.home.model.data
 
 /**
  * doc 주석

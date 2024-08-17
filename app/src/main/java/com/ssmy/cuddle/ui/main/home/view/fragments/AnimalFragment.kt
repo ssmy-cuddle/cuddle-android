@@ -1,4 +1,4 @@
-package com.ssmy.cuddle.ui.main.home.fragments
+package com.ssmy.cuddle.ui.main.home.view.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ssmy.cuddle.databinding.FragmentAnimalBinding
-import com.ssmy.cuddle.ui.main.home.adapters.AnimalItemAdapter
-import com.ssmy.cuddle.ui.main.home.viewmodel.AnimalViewModel
+import com.ssmy.cuddle.ui.main.home.view.adapters.AnimalItemAdapter
+import com.ssmy.cuddle.ui.main.home.model.data.viewmodel.AnimalViewModel
 
 class AnimalFragment : Fragment() {
 

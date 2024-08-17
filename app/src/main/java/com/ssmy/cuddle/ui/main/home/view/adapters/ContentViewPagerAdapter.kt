@@ -1,10 +1,10 @@
-package com.ssmy.cuddle.ui.main.home.adapters
+package com.ssmy.cuddle.ui.main.home.view.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.ssmy.cuddle.ui.main.home.fragments.AnimalFragment
-import com.ssmy.cuddle.ui.main.home.fragments.DailyFragment
-import com.ssmy.cuddle.ui.main.home.fragments.TravelFragment
+import com.ssmy.cuddle.ui.main.home.view.fragments.AnimalFragment
+import com.ssmy.cuddle.ui.main.home.view.fragments.DailyFragment
+import com.ssmy.cuddle.ui.main.home.view.fragments.TravelFragment
 
 /**
  * doc 주석

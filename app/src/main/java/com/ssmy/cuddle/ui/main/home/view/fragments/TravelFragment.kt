@@ -1,4 +1,4 @@
-package com.ssmy.cuddle.ui.main.home.fragments
+package com.ssmy.cuddle.ui.main.home.view.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ssmy.cuddle.databinding.FragmentTravelBinding
-import com.ssmy.cuddle.ui.main.home.adapters.TravelItemAdapter
-import com.ssmy.cuddle.ui.main.home.viewmodel.TravelViewModel
+import com.ssmy.cuddle.ui.main.home.view.adapters.TravelItemAdapter
+import com.ssmy.cuddle.ui.main.home.model.data.viewmodel.TravelViewModel
 
 class TravelFragment : Fragment() {
 

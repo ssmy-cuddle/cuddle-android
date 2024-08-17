@@ -1,10 +1,10 @@
-package com.ssmy.cuddle.ui.main.home.viewmodel
+package com.ssmy.cuddle.ui.main.home.model.data.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ssmy.cuddle.R
-import com.ssmy.cuddle.ui.main.home.models.HomeItemData
+import com.ssmy.cuddle.ui.main.home.model.data.HomeItemData
 
 /**
  * doc 주석

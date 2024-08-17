@@ -1,4 +1,4 @@
-package com.ssmy.cuddle.ui.main.home.adapters
+package com.ssmy.cuddle.ui.main.home.view.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

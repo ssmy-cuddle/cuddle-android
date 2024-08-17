@@ -5,11 +5,11 @@
 
         <variable
             name="item"
-            type="com.ssmy.cuddle.ui.main.home.models.HomeItemData.DailyItem" />
+            type="com.ssmy.cuddle.ui.main.home.model.data.HomeItemData" />
 
         <variable
             name="viewModel"
-            type="com.ssmy.cuddle.ui.main.home.viewmodel.DailyViewModel" />
+            type="com.ssmy.cuddle.ui.main.home.model.data.viewmodel.DailyViewModel" />
     </data>
 
     <LinearLayout
