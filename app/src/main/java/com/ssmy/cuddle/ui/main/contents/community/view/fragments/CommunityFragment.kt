@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ssmy.cuddle.R
 import com.ssmy.cuddle.databinding.FragmentCommunityBinding
@@ -32,31 +33,39 @@ class CommunityFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
-        setupTabs()
+//        setupTabs()
         observeViewModel()
-
         if (savedInstanceState == null) {
             replaceFragment(DailyFragment())
         }
+
+        setupFloatingActionButton()
     }
 
-    private fun setupTabs() {
-        val tabItems = listOf(
-            CommunityItemData.ContentTabItem("일상", R.drawable.ic_daily),
-            CommunityItemData.ContentTabItem("여행기", R.drawable.ic_travel),
-            CommunityItemData.ContentTabItem("산책메이트", R.drawable.ic_mate),
-            CommunityItemData.ContentTabItem("자유게시판", R.drawable.ic_board)
-        )
+    private fun setupFloatingActionButton() {
+        binding.fabFlogging.setOnClickListener {
 
-        val tabAdapter = CommunityContentTabAdapter(tabItems) { position ->
-            viewModel.selectTab(position)
-        }
-        binding.tabRecyclerView.apply {
-            layoutManager = GridLayoutManager(context, 4)
-            adapter = tabAdapter
-            setHasFixedSize(true)
         }
     }
+
+    // todo :: 일상만 오픈
+//    private fun setupTabs() {
+//        val tabItems = listOf(
+//            CommunityItemData.ContentTabItem("일상", R.drawable.ic_daily),
+//            CommunityItemData.ContentTabItem("여행기", R.drawable.ic_travel),
+//            CommunityItemData.ContentTabItem("산책메이트", R.drawable.ic_mate),
+//            CommunityItemData.ContentTabItem("자유게시판", R.drawable.ic_board)
+//        )
+//
+//        val tabAdapter = CommunityContentTabAdapter(tabItems) { position ->
+//            viewModel.selectTab(position)
+//        }
+//        binding.tabRecyclerView.apply {
+//            layoutManager = GridLayoutManager(context, 4)
+//            adapter = tabAdapter
+//            setHasFixedSize(true)
+//        }
+//    }
 
     private fun observeViewModel() {
         viewModel.selectedTab.observe(viewLifecycleOwner) { selectedTabIndex ->

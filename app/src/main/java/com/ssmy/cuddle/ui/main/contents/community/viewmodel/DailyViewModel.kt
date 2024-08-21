@@ -39,6 +39,26 @@ class DailyViewModel : ViewModel() {
                 likes = 20,
                 comments = 10,
                 description = "Another sample post."
+            ),
+            CommunityItemData.Post(
+                id = "1",
+                profileImageRes = R.drawable.ic_profile,
+                nickname = "User1",
+                postTime = System.currentTimeMillis() - 60000,
+                images = listOf(R.drawable.sample_image1, R.drawable.sample_image2),
+                likes = 10,
+                comments = 5,
+                description = "This is a sample post."
+            ),
+            CommunityItemData.Post(
+                id = "2",
+                profileImageRes = R.drawable.ic_profile,
+                nickname = "User2",
+                postTime = System.currentTimeMillis() - 3600000,
+                images = listOf(R.drawable.sample_image2),
+                likes = 20,
+                comments = 10,
+                description = "Another sample post."
             )
             // Add more sample posts
         )
