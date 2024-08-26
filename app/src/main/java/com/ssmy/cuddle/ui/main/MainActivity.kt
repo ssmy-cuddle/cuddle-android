@@ -9,14 +9,12 @@ import androidx.core.view.updatePadding
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.LabelVisibilityMode
-import com.google.android.material.navigation.NavigationBarView
 import com.ssmy.cuddle.R
 import com.ssmy.cuddle.data.DataStoreManager
 import com.ssmy.cuddle.databinding.ActivityMainBinding
 import com.ssmy.cuddle.ui.base.BaseActivity
-import com.ssmy.cuddle.ui.main.ViewModel.MainViewModel
-import com.ssmy.cuddle.ui.main.ViewModel.MainViewModelFactory
+import com.ssmy.cuddle.ui.main.viewmodel.MainViewModel
+import com.ssmy.cuddle.ui.main.viewmodel.MainViewModelFactory
 
 class MainActivity : BaseActivity<MainViewModel>() {
     override val viewModel: MainViewModel by viewModels {

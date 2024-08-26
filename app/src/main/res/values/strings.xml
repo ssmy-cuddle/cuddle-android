@@ -6,7 +6,7 @@
     <string name="view_more">더보기</string>
     <string name="image_description">이미지 설명</string>
     <string name="logo_description">로고 설명</string>
-
+    <string name="community_title">커뮤니티</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">서비스 준비 중입니다.</string>
