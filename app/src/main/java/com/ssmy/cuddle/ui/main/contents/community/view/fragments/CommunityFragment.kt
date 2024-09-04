@@ -1,5 +1,6 @@
 package com.ssmy.cuddle.ui.main.contents.community.view.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.ssmy.cuddle.R
 import com.ssmy.cuddle.databinding.FragmentCommunityBinding
 import com.ssmy.cuddle.ui.main.contents.community.model.data.CommunityItemData
+import com.ssmy.cuddle.ui.main.contents.community.view.activitys.PostCreationActivity
 import com.ssmy.cuddle.ui.main.contents.community.viewmodel.CommunityViewModel
 import com.ssmy.cuddle.ui.main.contents.community.view.adapters.CommunityContentTabAdapter
 
@@ -44,7 +46,7 @@ class CommunityFragment : Fragment() {
 
     private fun setupFloatingActionButton() {
         binding.fabFlogging.setOnClickListener {
-
+            startActivity(Intent(requireContext(), PostCreationActivity::class.java))
         }
     }
 

@@ -80,6 +80,9 @@ dependencies {
     // kakao
     implementation "com.kakao.sdk:v2-all:2.20.3" // 전체 모듈 설치, 2.11.0 버전부터 지원
 
+    // Photo Picker dependencies for multiple image selection (on Android API 33+)
+    implementation 'androidx.activity:activity:1.6.1'
+
     // Unit Testing
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
