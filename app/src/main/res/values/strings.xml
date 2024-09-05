@@ -8,6 +8,12 @@
     <string name="logo_description">로고 설명</string>
     <string name="community_title">커뮤니티</string>
 
+    <string name="post_creation_title">글 등록</string>
+    <string name="post_creation_detail">내용</string>
+    <string name="post_creation_hint">세부 내용을 작성해주세요.</string>
+    <string name="post_creation_complete">작성 완료</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">서비스 준비 중입니다.</string>
 </resources>
