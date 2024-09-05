@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.ssmy.cuddle.ui.main.contents.community.viewmodel.PostCreationViewModel" />
+            type="com.ssmy.cuddle.ui.main.contents.community.viewmodels.PostCreationViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

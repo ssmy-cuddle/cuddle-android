@@ -15,7 +15,7 @@ import com.ssmy.cuddle.R
 import com.ssmy.cuddle.databinding.ActivityPostCreationBinding
 import com.ssmy.cuddle.ui.base.BaseActivity
 import com.ssmy.cuddle.ui.main.contents.community.view.adapters.PhotoAdapter
-import com.ssmy.cuddle.ui.main.contents.community.viewmodel.PostCreationViewModel
+import com.ssmy.cuddle.ui.main.contents.community.viewmodels.PostCreationViewModel
 
 class PostCreationActivity : BaseActivity<PostCreationViewModel>() {
 

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.ssmy.cuddle.databinding.ItemPhotoBinding
-import com.ssmy.cuddle.ui.main.contents.community.viewmodel.PostCreationViewModel
+import com.ssmy.cuddle.ui.main.contents.community.viewmodels.PostCreationViewModel
 
 /**
  * doc 주석

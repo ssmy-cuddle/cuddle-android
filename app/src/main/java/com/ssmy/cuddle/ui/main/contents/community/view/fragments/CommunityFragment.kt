@@ -7,14 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.Navigation.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import com.ssmy.cuddle.R
 import com.ssmy.cuddle.databinding.FragmentCommunityBinding
-import com.ssmy.cuddle.ui.main.contents.community.model.data.CommunityItemData
 import com.ssmy.cuddle.ui.main.contents.community.view.activitys.PostCreationActivity
-import com.ssmy.cuddle.ui.main.contents.community.viewmodel.CommunityViewModel
-import com.ssmy.cuddle.ui.main.contents.community.view.adapters.CommunityContentTabAdapter
+import com.ssmy.cuddle.ui.main.contents.community.viewmodels.CommunityViewModel
 
 class CommunityFragment : Fragment() {
 

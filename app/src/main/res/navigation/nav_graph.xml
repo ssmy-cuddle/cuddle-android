@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.ssmy.cuddle.ui.main.contents.profile.ProfileFragment"
+        android:name="com.ssmy.cuddle.ui.main.contents.profile.view.fragments.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

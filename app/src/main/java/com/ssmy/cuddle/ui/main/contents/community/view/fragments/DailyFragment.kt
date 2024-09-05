@@ -6,13 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ssmy.cuddle.R
 import com.ssmy.cuddle.databinding.FragmentDailyCommunityBinding
 import com.ssmy.cuddle.ui.main.contents.community.model.data.CommunityItemData
 import com.ssmy.cuddle.ui.main.contents.community.view.adapters.DailyPostAdapter
-import com.ssmy.cuddle.ui.main.contents.community.viewmodel.DailyViewModel
+import com.ssmy.cuddle.ui.main.contents.community.viewmodels.DailyViewModel
 
 class DailyFragment : Fragment() {
 

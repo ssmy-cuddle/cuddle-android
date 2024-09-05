@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.main.contents.profile.ProfileFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fontFamily="@font/nps_font_regular"
-        android:gravity="center"
-        android:text="@string/hello_blank_fragment"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+        tools:context=".ui.main.contents.profile.view.fragments.ProfileFragment">
 
-</FrameLayout>
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/nps_font_regular"
+            android:gravity="center"
+            android:text="@string/hello_blank_fragment"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </FrameLayout>
+</layout>

@@ -1,4 +1,4 @@
-package com.ssmy.cuddle.ui.main.viewmodel
+package com.ssmy.cuddle.ui.main.viewmodels
 
 import android.app.Application
 import com.ssmy.cuddle.data.DataStoreManager

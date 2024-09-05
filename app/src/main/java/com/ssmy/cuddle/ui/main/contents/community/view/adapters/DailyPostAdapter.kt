@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ssmy.cuddle.R
 import com.ssmy.cuddle.databinding.ItemDailyPostBinding
 import com.ssmy.cuddle.ui.main.contents.community.model.data.CommunityItemData
-import com.ssmy.cuddle.ui.main.contents.community.viewmodel.DailyViewModel
+import com.ssmy.cuddle.ui.main.contents.community.viewmodels.DailyViewModel
 
 class DailyPostAdapter(
     private val viewModel: DailyViewModel,

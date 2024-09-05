@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.ssmy.cuddle.ui.main.contents.community.viewmodel.DailyViewModel" />
+            type="com.ssmy.cuddle.ui.main.contents.community.viewmodels.DailyViewModel" />
 
         <variable
             name="post"

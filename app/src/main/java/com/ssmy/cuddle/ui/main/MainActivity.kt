@@ -13,8 +13,8 @@ import com.ssmy.cuddle.R
 import com.ssmy.cuddle.data.DataStoreManager
 import com.ssmy.cuddle.databinding.ActivityMainBinding
 import com.ssmy.cuddle.ui.base.BaseActivity
-import com.ssmy.cuddle.ui.main.viewmodel.MainViewModel
-import com.ssmy.cuddle.ui.main.viewmodel.MainViewModelFactory
+import com.ssmy.cuddle.ui.main.viewmodels.MainViewModel
+import com.ssmy.cuddle.ui.main.viewmodels.MainViewModelFactory
 
 class MainActivity : BaseActivity<MainViewModel>() {
     override val viewModel: MainViewModel by viewModels {

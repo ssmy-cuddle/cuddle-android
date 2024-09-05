@@ -1,4 +1,4 @@
-package com.ssmy.cuddle.ui.main.contents.community.viewmodel
+package com.ssmy.cuddle.ui.main.contents.community.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

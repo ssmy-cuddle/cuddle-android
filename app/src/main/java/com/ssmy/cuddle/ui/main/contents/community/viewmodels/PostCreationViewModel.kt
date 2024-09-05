@@ -1,4 +1,4 @@
-package com.ssmy.cuddle.ui.main.contents.community.viewmodel
+package com.ssmy.cuddle.ui.main.contents.community.viewmodels
 
 import android.app.Application
 import android.net.Uri

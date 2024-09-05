@@ -13,7 +13,7 @@ import com.ssmy.cuddle.databinding.FragmentHomeBinding
 import com.ssmy.cuddle.ui.main.contents.home.view.adapters.HomeContentTabAdapter
 import com.ssmy.cuddle.ui.main.contents.home.view.adapters.CuddleOriginalsAdapter
 import com.ssmy.cuddle.ui.main.contents.home.view.adapters.HomeContentViewPagerAdapter
-import com.ssmy.cuddle.ui.main.contents.home.viewmodel.HomeViewModel
+import com.ssmy.cuddle.ui.main.contents.home.viewmodels.HomeViewModel
 
 class HomeFragment : Fragment() {
 
