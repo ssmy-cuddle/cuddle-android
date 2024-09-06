@@ -13,6 +13,11 @@
     <string name="post_creation_hint">세부 내용을 작성해주세요.</string>
     <string name="post_creation_complete">작성 완료</string>
 
+    <string name="posts">게시글</string>
+    <string name="days_since_joined">Cuddle 가입한 지</string>
+    <string name="pets">반려동물 수</string>
+    <string name="edit_profile">프로필 수정</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">서비스 준비 중입니다.</string>

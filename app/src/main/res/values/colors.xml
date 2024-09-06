@@ -11,6 +11,7 @@
     <color name="lovely_blue">#58AEE2</color>
     <color name="derby_yellow">#FCC719</color>
     <color name="cuddle_pink">#FF63AE</color>
+    <color name="cuddle_green">#58E2A8</color>
 
     <color name="color_a2eea5">#A2EEA5</color>
     <color name="color_232323">#232323</color>
@@ -18,4 +19,7 @@
     <color name="color_606060">#606060</color>
     <color name="color_BDBDBD">#BDBDBD</color>
     <color name="color_E8E8E8">#E8E8E8</color>
+    <color name="color_9B9999">#9B9999</color>
+    <color name="color_989CA1">#989CA1</color>
+    <color name="color_393C3F">#393C3F</color>
 </resources>
