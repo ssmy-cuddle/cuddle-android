@@ -1,5 +1,6 @@
 package com.ssmy.cuddle.ui.main.contents.profile.view.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ssmy.cuddle.databinding.FragmentProfileBinding
 import com.ssmy.cuddle.ui.main.contents.profile.model.data.Pet
+import com.ssmy.cuddle.ui.main.contents.profile.view.activitys.UserProfileActivity
 import com.ssmy.cuddle.ui.main.contents.profile.view.adapters.PetAdapter
 import com.ssmy.cuddle.ui.main.contents.profile.viewmodels.ProfileViewModel
 
@@ -40,8 +42,11 @@ class ProfileFragment : Fragment() {
             binding.petsRecyclerView.adapter = petAdapter
         }
 
-        // Load pet data
         profileViewModel.loadPets()
+
+        binding.editProfileButton.setOnClickListener {
+            startActivity(Intent(requireContext(), UserProfileActivity::class.java))
+        }
     }
 
     private fun onEditPet(pet: Pet) {

@@ -27,6 +27,13 @@
     <string name="pet_together">함께한 지 </string>
     <string name="pet_days"> 일째</string>
 
+    <string name="profile_edit_title">프로필 수정</string>
+    <string name="profile_nickname">닉네임</string>
+    <string name="profile_nickname_hint">닉네임을 입력해주세요.</string>
+    <string name="profile_bio">한줄소개</string>
+    <string name="profile_bio_hint">나를 소개할 수 있는 한 줄을 적어주세요.</string>
+
+    <string name="edit_done">수정완료</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">서비스 준비 중입니다.</string>
