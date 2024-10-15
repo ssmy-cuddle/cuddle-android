@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/nav_home"
-        android:icon="@drawable/ic_home_selector"
-        android:title="홈" />
-    <item
-        android:id="@+id/nav_journey"
-        android:icon="@drawable/ic_journey_selector"
-        android:title="여정" />
-    <item
-        android:id="@+id/nav_community"
-        android:icon="@drawable/ic_community_selector"
-        android:title="커뮤니티" />
-    <item
-        android:id="@+id/nav_donate"
-        android:icon="@drawable/ic_donate_selector"
-        android:title="기부" />
+<!--    <item-->
+<!--        android:id="@+id/nav_home"-->
+<!--        android:icon="@drawable/ic_home_selector"-->
+<!--        android:title="홈" />-->
+<!--    <item-->
+<!--        android:id="@+id/nav_journey"-->
+<!--        android:icon="@drawable/ic_journey_selector"-->
+<!--        android:title="여정" />-->
+<!--    <item-->
+<!--        android:id="@+id/nav_community"-->
+<!--        android:icon="@drawable/ic_community_selector"-->
+<!--        android:title="커뮤니티" />-->
+<!--    <item-->
+<!--        android:id="@+id/nav_donate"-->
+<!--        android:icon="@drawable/ic_donate_selector"-->
+<!--        android:title="기부" />-->
     <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/ic_profile_selector"

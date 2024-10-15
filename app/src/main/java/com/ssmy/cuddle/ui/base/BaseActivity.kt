@@ -1,6 +1,7 @@
 package com.ssmy.cuddle.ui.base
 
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.tabs.TabLayout.TabGravity
 
 /**
  * BaseActivity는 공통 기능을 제공하는 베이스 액티비티입니다.
@@ -10,4 +11,5 @@ import androidx.appcompat.app.AppCompatActivity
  **/
 abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() {
     abstract val viewModel: VM
+    val TAG = "JLog"
 }

@@ -28,7 +28,18 @@
             android:exported="false" />
         <activity
             android:name=".ui.login.LoginActivity"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="oauth"
+                    android:scheme="@string/KAKAO_SCHEME" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="false"
@@ -42,18 +53,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
-                <data
-                    android:host="@string/KAKAO_HOST"
-                    android:scheme="@string/KAKAO_SCHEME" />
-            </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/KAKAO_APP_KEY"/>
     </application>
 
 </manifest>
