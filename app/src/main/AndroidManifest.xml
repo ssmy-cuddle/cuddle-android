@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Cuddleandroid"
         tools:targetApi="31">
         <activity
+            android:name=".ui.login.UserLoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.main.contents.profile.view.activitys.AnimalProfileActivity"
             android:exported="false" />
         <activity
@@ -28,7 +31,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.login.LoginActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -54,9 +57,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.kakao.sdk.AppKey"
-            android:value="@string/KAKAO_APP_KEY"/>
+            android:value="@string/KAKAO_APP_KEY" />
     </application>
 
 </manifest>

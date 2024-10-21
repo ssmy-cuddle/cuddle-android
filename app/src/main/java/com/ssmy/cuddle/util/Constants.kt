@@ -7,4 +7,6 @@ package com.ssmy.cuddle.util
  **/
 object Constants {
     const val LOGIN_TOKEN = "login_token"
+    const val NICKNAME_KEY = "nickname"
+    const val BIO_KEY = "bio"
 }
