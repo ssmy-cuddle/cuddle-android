@@ -11,8 +11,8 @@
     </data>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="135dp"
-        android:layout_height="188dp"
+        android:layout_width="170dp"
+        android:layout_height="225dp"
         android:layout_margin="8dp"
         app:cardCornerRadius="23dp">
 
@@ -46,15 +46,22 @@
                 android:textSize="14sp"
                 tools:text="미경이" />
 
-            <ImageView
+            <!--            <ImageView-->
+            <!--                android:id="@+id/pet_image"-->
+            <!--                android:layout_width="75dp"-->
+            <!--                android:layout_height="75dp"-->
+            <!--                android:layout_centerInParent="true"-->
+            <!--                android:background="@drawable/bg_circle"-->
+            <!--                android:scaleType="centerCrop"-->
+            <!--                android:src="@{pet.imageUrl}"-->
+            <!--                tools:src="@drawable/sample_image1" />-->
+
+            <View
                 android:id="@+id/pet_image"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_centerInParent="true"
-                android:background="@drawable/bg_circle"
-                android:scaleType="centerCrop"
-                android:src="@{pet.imageUrl}"
-                tools:src="@drawable/sample_image1" />
+                android:background="@android:color/transparent" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

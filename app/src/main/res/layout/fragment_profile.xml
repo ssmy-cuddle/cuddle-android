@@ -18,25 +18,36 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="57dp"
             android:layout_marginEnd="14dp"
+            android:background="@android:color/transparent"
             android:padding="8dp"
-            android:src="@drawable/ic_settings"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+        <!--        android:src="@drawable/ic_settings"-->
 
-        <ImageView
+        <View
             android:id="@+id/profile_image"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="-15dp"
-            android:background="@drawable/bg_circle"
-            android:scaleType="centerCrop"
+            android:layout_marginTop="15dp"
+            android:background="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/settings_button" />
 
+        <!--        <ImageView-->
+        <!--            android:id="@+id/profile_image"-->
+        <!--            android:layout_width="70dp"-->
+        <!--            android:layout_height="70dp"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:layout_marginTop="-15dp"-->
+        <!--            android:background="@drawable/bg_circle"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/settings_button" />-->
+
         <TextView
-            android:id="@+id/nickname_text"
+            android:id="@+id/text_nickname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -48,17 +59,18 @@
             app:layout_constraintTop_toBottomOf="@id/profile_image" />
 
         <TextView
-            android:id="@+id/intro_text"
+            android:id="@+id/text_bio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="18dp"
+            android:fontFamily="sans-serif-medium"
             android:textColor="@color/color_9B9999"
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/nickname_text" />
+            app:layout_constraintTop_toBottomOf="@id/text_nickname" />
 
         <View
             android:id="@+id/divider"
@@ -67,7 +79,7 @@
             android:layout_marginTop="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/intro_text" />
+            app:layout_constraintTop_toBottomOf="@id/text_bio" />
 
         <LinearLayout
             android:id="@+id/stats_layout"
@@ -82,53 +94,53 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider">
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical">-->
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:gravity="center"-->
+            <!--                android:orientation="vertical">-->
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="@string/posts"-->
-<!--                    android:textColor="@color/color_989CA1"-->
-<!--                    android:textSize="10sp" />-->
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="@string/posts"-->
+            <!--                    android:textColor="@color/color_989CA1"-->
+            <!--                    android:textSize="10sp" />-->
 
-<!--                <TextView-->
-<!--                    android:id="@+id/posts_count"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="5dp"-->
-<!--                    android:textColor="@color/color_393C3F"-->
-<!--                    android:textSize="10sp"-->
-<!--                    android:textStyle="bold" />-->
-<!--            </LinearLayout>-->
+            <!--                <TextView-->
+            <!--                    android:id="@+id/posts_count"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="5dp"-->
+            <!--                    android:textColor="@color/color_393C3F"-->
+            <!--                    android:textSize="10sp"-->
+            <!--                    android:textStyle="bold" />-->
+            <!--            </LinearLayout>-->
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_weight="1"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical">-->
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:gravity="center"-->
+            <!--                android:orientation="vertical">-->
 
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="@string/days_since_joined"-->
-<!--                    android:textColor="@color/color_989CA1"-->
-<!--                    android:textSize="10sp" />-->
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="@string/days_since_joined"-->
+            <!--                    android:textColor="@color/color_989CA1"-->
+            <!--                    android:textSize="10sp" />-->
 
-<!--                <TextView-->
-<!--                    android:id="@+id/joined_days"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="5dp"-->
-<!--                    android:textColor="@color/color_393C3F"-->
-<!--                    android:textSize="10sp"-->
-<!--                    android:textStyle="bold" />-->
-<!--            </LinearLayout>-->
+            <!--                <TextView-->
+            <!--                    android:id="@+id/joined_days"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="5dp"-->
+            <!--                    android:textColor="@color/color_393C3F"-->
+            <!--                    android:textSize="10sp"-->
+            <!--                    android:textStyle="bold" />-->
+            <!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -158,12 +170,18 @@
 
         <Button
             android:id="@+id/edit_profile_button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginStart="28dp"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/cuddle_green"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/shape_edit_button"
+            android:fontFamily="@font/nps_font_bold"
+            android:padding="12dp"
             android:text="@string/edit_profile"
+            android:textColor="@color/white"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/stats_layout" />
@@ -172,8 +190,9 @@
             android:id="@+id/pets_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:padding="17dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/edit_profile_button"
             app:spanCount="2" />
