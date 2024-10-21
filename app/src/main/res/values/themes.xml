@@ -23,7 +23,6 @@
 
     <!-- 투명 상단바 -->
     <style name="Theme.Cuddleandroid.TransparentStatusBar" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!--drawerlayout statusbar -->
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowTranslucentStatus">true</item>
