@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-    </data>
+    <data></data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -44,18 +43,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_bar" />
 
-        <ImageView
+        <View
             android:id="@+id/user_profile_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
+            android:layout_width="117dp"
+            android:layout_height="117dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/bg_circle"
-            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_text" />
-        <!--            android:onClick="@{() -> viewModel.onProfileImageClick()}"-->
 
         <TextView
             android:id="@+id/textView3"
@@ -89,8 +85,10 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
+            android:background="@drawable/shape_edit_box"
             android:hint="@string/profile_nickname_hint"
             android:inputType="textPersonName"
+            android:padding="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -126,13 +124,14 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
+            android:background="@drawable/shape_edit_box"
             android:hint="@string/profile_bio_hint"
             android:inputType="text"
+            android:padding="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-        <!-- Save button -->
         <Button
             android:id="@+id/btn_save_profile"
             android:layout_width="0dp"
@@ -141,9 +140,16 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="30dp"
+            android:background="@drawable/selector_complete_button"
+            android:enabled="false"
+            android:fontFamily="@font/nps_font_bold"
+            android:padding="16dp"
             android:text="@string/edit_done"
+            android:textColor="@color/white"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.ssmy.cuddle.data.DataStoreManager
 import com.ssmy.cuddle.ui.base.BaseViewModel
+import com.ssmy.cuddle.ui.main.contents.profile.model.data.UserData
 import com.ssmy.cuddle.util.Constants.BIO_KEY
 import com.ssmy.cuddle.util.Constants.NICKNAME_KEY
 import kotlinx.coroutines.flow.combine
@@ -47,5 +48,3 @@ class UserLoginViewModel(
         return userData
     }
 }
-
-data class UserData(val nickname: String, val bio: String)
