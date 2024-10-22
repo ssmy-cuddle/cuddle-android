@@ -1,7 +1,6 @@
 package com.ssmy.cuddle.ui.main.contents.profile.viewmodels
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -28,11 +27,18 @@ class ProfileViewModel(
     private val dataStoreManager: DataStoreManager
 ) : ViewModel() {
 
+    private val _petsCount = MutableLiveData<Int>()
+    val petsCount: LiveData<Int> = _petsCount
+
     private val _pets = MutableLiveData<List<Pet>>()
     val pets: LiveData<List<Pet>> = _pets
 
     private val _userData = MutableLiveData<UserData>()
     val userData: LiveData<UserData> get() = _userData
+
+    init {
+        loadPetsCount()
+    }
 
     fun loadPets() {
         viewModelScope.launch {
@@ -85,8 +91,14 @@ class ProfileViewModel(
 
     private suspend fun getCurrentPetId(): Int {
         val currentIdFlow = dataStoreManager.getUserPreference(application, CURRENT_PET_ID_KEY, 0)
-        Log.d(">>4>>>", currentIdFlow.first().toString())
         return currentIdFlow.first()!!
+    }
+
+    private fun loadPetsCount() {
+        viewModelScope.launch {
+            val currentId = getCurrentPetId()
+            _petsCount.postValue(currentId)
+        }
     }
 
     fun loadUserData() {

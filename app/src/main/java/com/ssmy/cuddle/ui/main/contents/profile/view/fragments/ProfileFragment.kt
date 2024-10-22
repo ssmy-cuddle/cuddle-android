@@ -56,6 +56,10 @@ class ProfileFragment : Fragment() {
             petAdapter.updateData(pets)
         }
 
+        profileViewModel.petsCount.observe(viewLifecycleOwner) { count ->
+            binding.petsCount.text = "$count"
+        }
+
         profileViewModel.loadPets()
 
         binding.editProfileButton.setOnClickListener {
