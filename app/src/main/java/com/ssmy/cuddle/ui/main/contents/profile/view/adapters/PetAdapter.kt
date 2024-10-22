@@ -10,6 +10,9 @@ import com.ssmy.cuddle.R
 import com.ssmy.cuddle.databinding.ItemAddPetBinding
 import com.ssmy.cuddle.databinding.ItemPetBinding
 import com.ssmy.cuddle.ui.main.contents.profile.model.data.Pet
+import java.text.SimpleDateFormat
+import java.util.Locale
+import java.util.concurrent.TimeUnit
 
 /**
  * doc 주석
@@ -76,6 +79,10 @@ class PetAdapter(
         fun bind(pet: Pet) {
             binding.pet = pet
 
+            val daysTogetherTextView = binding.daysTogether
+            val daysPassed = calculateDaysPassed(pet.daysTogether)
+            daysTogetherTextView.text = "${daysPassed + 1}"
+
             binding.root.setOnClickListener {
                 if (isFrontVisible) {
                     binding.frontLayout.visibility = View.GONE
@@ -90,6 +97,18 @@ class PetAdapter(
             binding.editPet.setOnClickListener {
                 onEditPet(pet)
             }
+        }
+    }
+
+    private fun calculateDaysPassed(daysTogether: String): Long {
+        return try {
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            val startDate = dateFormat.parse(daysTogether)
+            val today = System.currentTimeMillis()
+            val diffInMillis = today - startDate.time
+            TimeUnit.DAYS.convert(diffInMillis, TimeUnit.MILLISECONDS)
+        } catch (e: Exception) {
+            0
         }
     }
 
