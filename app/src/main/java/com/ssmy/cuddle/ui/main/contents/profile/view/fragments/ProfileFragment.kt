@@ -31,7 +31,6 @@ class ProfileFragment : Fragment() {
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
-            // AnimalProfileActivity에서 돌아오면 펫 목록을 다시 로드합니다.
             profileViewModel.loadPets()
         }
     }
@@ -54,7 +53,6 @@ class ProfileFragment : Fragment() {
         }
 
         profileViewModel.pets.observe(viewLifecycleOwner) { pets ->
-            // petAdapter를 업데이트합니다.
             petAdapter.updateData(pets)
         }
 
