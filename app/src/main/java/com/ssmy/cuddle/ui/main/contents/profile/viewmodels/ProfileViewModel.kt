@@ -1,6 +1,7 @@
 package com.ssmy.cuddle.ui.main.contents.profile.viewmodels
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,12 +10,12 @@ import com.ssmy.cuddle.data.DataStoreManager
 import com.ssmy.cuddle.ui.main.contents.profile.model.data.Pet
 import com.ssmy.cuddle.ui.main.contents.profile.model.data.UserData
 import com.ssmy.cuddle.util.Constants.BIO_KEY
+import com.ssmy.cuddle.util.Constants.CURRENT_PET_ID_KEY
 import com.ssmy.cuddle.util.Constants.NICKNAME_KEY
 import com.ssmy.cuddle.util.Constants.PET_BIRTHDAY_KEY
 import com.ssmy.cuddle.util.Constants.PET_BREED_KEY
 import com.ssmy.cuddle.util.Constants.PET_DAYS_TOGETHER_KEY
 import com.ssmy.cuddle.util.Constants.PET_GENDER_KEY
-import com.ssmy.cuddle.util.Constants.PET_IDS_KEY
 import com.ssmy.cuddle.util.Constants.PET_IS_NEUTERED_KEY
 import com.ssmy.cuddle.util.Constants.PET_NAME_KEY
 import com.ssmy.cuddle.util.Constants.PET_WEIGHT_KEY
@@ -41,10 +42,10 @@ class ProfileViewModel(
     }
 
     private suspend fun fetchPetsFromDataStore(): List<Pet> {
-        val petIds = getPetIds()
+        val currentId = getCurrentPetId()
         val pets = mutableListOf<Pet>()
 
-        for (id in petIds) {
+        for (id in 1..currentId) {
             val idString = id.toString()
 
             val nameFlow = dataStoreManager.getUserPreference(application, "${PET_NAME_KEY}_$idString", "")
@@ -63,27 +64,29 @@ class ProfileViewModel(
             val isNeutered = isNeuteredFlow.first() ?: false
             val daysTogether = daysTogetherFlow.first() ?: ""
 
-            val pet = Pet(
-                id = id,
-                name = name,
-                gender = gender,
-                breed = breed,
-                birthday = birthday,
-                weight = weight,
-                isNeutered = isNeutered,
-                daysTogether = daysTogether
-            )
+            if (name.isNotEmpty()) {
+                val pet = Pet(
+                    id = id,
+                    name = name,
+                    gender = gender,
+                    breed = breed,
+                    birthday = birthday,
+                    weight = weight,
+                    isNeutered = isNeutered,
+                    daysTogether = daysTogether
+                )
 
-            pets.add(pet)
+                pets.add(pet)
+            }
         }
 
         return pets
     }
 
-    private suspend fun getPetIds(): List<Int> {
-        val idsFlow = dataStoreManager.getUserPreference(application, PET_IDS_KEY, "")
-        val idsString = idsFlow.first() ?: ""
-        return idsString.split(",").mapNotNull { it.toIntOrNull() }.filter { it > 0 }
+    private suspend fun getCurrentPetId(): Int {
+        val currentIdFlow = dataStoreManager.getUserPreference(application, CURRENT_PET_ID_KEY, 0)
+        Log.d(">>4>>>", currentIdFlow.first().toString())
+        return currentIdFlow.first()!!
     }
 
     fun loadUserData() {

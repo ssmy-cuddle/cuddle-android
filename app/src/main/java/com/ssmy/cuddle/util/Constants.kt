@@ -18,6 +18,5 @@ object Constants {
     const val PET_WEIGHT_KEY = "PET_WEIGHT"
     const val PET_IS_NEUTERED_KEY = "PET_IS_NEUTERED"
     const val PET_DAYS_TOGETHER_KEY = "PET_DAYS_TOGETHER"
-    const val PET_IDS_KEY = "PET_IDS"
     const val CURRENT_PET_ID_KEY = "CURRENT_PET_ID"
 }

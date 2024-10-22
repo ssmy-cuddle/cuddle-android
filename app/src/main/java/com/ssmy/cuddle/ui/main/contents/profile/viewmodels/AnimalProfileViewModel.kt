@@ -8,7 +8,14 @@ import androidx.lifecycle.viewModelScope
 import com.ssmy.cuddle.data.DataStoreManager
 import com.ssmy.cuddle.ui.base.BaseViewModel
 import com.ssmy.cuddle.ui.main.contents.profile.model.data.Pet
-import com.ssmy.cuddle.util.Constants
+import com.ssmy.cuddle.util.Constants.CURRENT_PET_ID_KEY
+import com.ssmy.cuddle.util.Constants.PET_BIRTHDAY_KEY
+import com.ssmy.cuddle.util.Constants.PET_BREED_KEY
+import com.ssmy.cuddle.util.Constants.PET_DAYS_TOGETHER_KEY
+import com.ssmy.cuddle.util.Constants.PET_GENDER_KEY
+import com.ssmy.cuddle.util.Constants.PET_IS_NEUTERED_KEY
+import com.ssmy.cuddle.util.Constants.PET_NAME_KEY
+import com.ssmy.cuddle.util.Constants.PET_WEIGHT_KEY
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
@@ -156,24 +163,24 @@ class AnimalProfileViewModel(
             )
 
             val idString = pet.id.toString()
-            dataStoreManager.putUserPreference(getApplication(), "${Constants.PET_NAME_KEY}_$idString", pet.name)
-            dataStoreManager.putUserPreference(getApplication(), "${Constants.PET_GENDER_KEY}_$idString", pet.gender)
-            dataStoreManager.putUserPreference(getApplication(), "${Constants.PET_BREED_KEY}_$idString", pet.breed)
-            dataStoreManager.putUserPreference(getApplication(), "${Constants.PET_BIRTHDAY_KEY}_$idString", pet.birthday)
-            dataStoreManager.putUserPreference(getApplication(), "${Constants.PET_WEIGHT_KEY}_$idString", pet.weight)
-            dataStoreManager.putUserPreference(getApplication(), "${Constants.PET_IS_NEUTERED_KEY}_$idString", pet.isNeutered)
-            dataStoreManager.putUserPreference(getApplication(), "${Constants.PET_DAYS_TOGETHER_KEY}_$idString", pet.daysTogether)
+            dataStoreManager.putUserPreference(getApplication(), "${PET_NAME_KEY}_$idString", pet.name)
+            dataStoreManager.putUserPreference(getApplication(), "${PET_GENDER_KEY}_$idString", pet.gender)
+            dataStoreManager.putUserPreference(getApplication(), "${PET_BREED_KEY}_$idString", pet.breed)
+            dataStoreManager.putUserPreference(getApplication(), "${PET_BIRTHDAY_KEY}_$idString", pet.birthday)
+            dataStoreManager.putUserPreference(getApplication(), "${PET_WEIGHT_KEY}_$idString", pet.weight)
+            dataStoreManager.putUserPreference(getApplication(), "${PET_IS_NEUTERED_KEY}_$idString", pet.isNeutered)
+            dataStoreManager.putUserPreference(getApplication(), "${PET_DAYS_TOGETHER_KEY}_$idString", pet.daysTogether)
 
             _saveComplete.postValue(true)
         }
     }
 
     private suspend fun generateNewPetId(): Int {
-        val currentIdFlow = dataStoreManager.getUserPreference(getApplication(), Constants.CURRENT_PET_ID_KEY, 0)
+        val currentIdFlow = dataStoreManager.getUserPreference(getApplication(), CURRENT_PET_ID_KEY, 0)
         val currentId = currentIdFlow.first()
         val newId = (currentId ?: 0) + 1
 
-        dataStoreManager.putUserPreference(getApplication(), Constants.CURRENT_PET_ID_KEY, newId)
+        dataStoreManager.putUserPreference(getApplication(), CURRENT_PET_ID_KEY, newId)
 
         return newId
     }
