@@ -54,7 +54,7 @@
                     android:layout_marginBottom="80dp"
                     android:fontFamily="@font/nps_font_bold"
                     android:gravity="center"
-                    android:text="@{viewModel.isPetDataAvailable() ? @string/profile_register_title : @string/profile_edit_title}"
+                    android:text="@{viewModel.isPetDataAvailable() ? @string/profile_edit_title : @string/profile_register_title}"
                     android:textColor="@color/black"
                     android:textSize="22sp" />
 
@@ -509,7 +509,7 @@
                         android:fontFamily="@font/nps_font_bold"
                         android:onClick="@{() -> viewModel.savePetData()}"
                         android:padding="16dp"
-                        android:text="@{viewModel.isPetDataAvailable() ? @string/register : @string/edit_done}"
+                        android:text="@{viewModel.isPetDataAvailable() ? @string/edit_done : @string/register}"
                         android:textColor="@color/white"
                         android:textSize="16sp" />
                 </LinearLayout>
