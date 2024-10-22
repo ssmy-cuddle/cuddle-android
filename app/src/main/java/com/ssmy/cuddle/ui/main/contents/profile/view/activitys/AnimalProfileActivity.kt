@@ -40,6 +40,25 @@ class AnimalProfileActivity : BaseActivity<AnimalProfileViewModel>() {
             viewModel.initializeNewPet()
         }
 
+        viewModel.petGender.observe(this) { gender ->
+            gender?.let {
+                when (it) {
+                    0 -> binding.radioGroupGender.check(R.id.radio_male)
+                    1 -> binding.radioGroupGender.check(R.id.radio_female)
+                }
+            }
+        }
+
+        viewModel.petIsNeutered.observe(this) { isNeutered ->
+            isNeutered?.let {
+                if (it) {
+                    binding.radioGroupNeutered.check(R.id.radio_neutered_yes)
+                } else {
+                    binding.radioGroupNeutered.check(R.id.radio_neutered_no)
+                }
+            }
+        }
+
         binding.birthdayContainer.setOnClickListener {
             hideKeyboard()
             showDatePicker { year, month, day ->

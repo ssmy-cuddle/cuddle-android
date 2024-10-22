@@ -37,6 +37,9 @@ class AnimalProfileViewModel(
 
     val isPetDataAvailable = MutableLiveData(false)
 
+    var currentPetId: Int? = null
+        private set
+
     val petName = MutableLiveData("")
     val petBreed = MutableLiveData("")
     val petWeight = MutableLiveData("")
@@ -78,6 +81,7 @@ class AnimalProfileViewModel(
     fun setPetData(pet: Pet) {
         isPetDataAvailable.value = true
 
+        currentPetId = pet.id
         petName.value = pet.name
         petBreed.value = pet.breed
         petGender.value = pet.gender
@@ -101,6 +105,7 @@ class AnimalProfileViewModel(
 
     fun initializeNewPet() {
         isPetDataAvailable.value = false
+        currentPetId = null
 
         val today = getCurrentDateParts()
         petName.value = ""
@@ -149,7 +154,11 @@ class AnimalProfileViewModel(
 
     fun savePetData() {
         viewModelScope.launch {
-            val newId = generateNewPetId()
+            val newId = if (isPetDataAvailable.value == true) {
+                currentPetId ?: generateNewPetId()
+            } else {
+                generateNewPetId()
+            }
 
             val pet = Pet(
                 id = newId,
