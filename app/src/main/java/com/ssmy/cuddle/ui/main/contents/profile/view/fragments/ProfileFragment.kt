@@ -1,11 +1,12 @@
 package com.ssmy.cuddle.ui.main.contents.profile.view.fragments
 
-import android.content.Context
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
@@ -26,6 +27,15 @@ class ProfileFragment : Fragment() {
         ProfileViewModelFactory(requireActivity().application, DataStoreManager)
     }
 
+    private val animalProfileResultLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            // AnimalProfileActivity에서 돌아오면 펫 목록을 다시 로드합니다.
+            profileViewModel.loadPets()
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,8 +54,8 @@ class ProfileFragment : Fragment() {
         }
 
         profileViewModel.pets.observe(viewLifecycleOwner) { pets ->
-            petAdapter = PetAdapter(pets, ::onEditPet, ::onAddPet)
-            binding.petsRecyclerView.adapter = petAdapter
+            // petAdapter를 업데이트합니다.
+            petAdapter.updateData(pets)
         }
 
         profileViewModel.loadPets()
@@ -54,8 +64,7 @@ class ProfileFragment : Fragment() {
             startActivity(Intent(requireContext(), UserProfileActivity::class.java))
         }
 
-
-        profileViewModel.userData.observe(this) { userData ->
+        profileViewModel.userData.observe(viewLifecycleOwner) { userData ->
             binding.textNickname.text = userData.nickname
             binding.textBio.text = userData.bio
         }
@@ -64,18 +73,18 @@ class ProfileFragment : Fragment() {
     }
 
     private fun onEditPet(pet: Pet) {
-        requireContext().startAnimalProfileActivity(pet)
+        startAnimalProfileActivity(pet)
     }
 
     private fun onAddPet() {
-        requireContext().startAnimalProfileActivity()
+        startAnimalProfileActivity()
     }
 
-    fun Context.startAnimalProfileActivity(pet: Pet? = null) {
-        val intent = Intent(this, AnimalProfileActivity::class.java)
+    private fun startAnimalProfileActivity(pet: Pet? = null) {
+        val intent = Intent(requireContext(), AnimalProfileActivity::class.java)
         pet?.let {
             intent.putExtra("pet", it)
         }
-        startActivity(intent)
+        animalProfileResultLauncher.launch(intent)
     }
 }

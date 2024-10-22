@@ -1,5 +1,6 @@
 package com.ssmy.cuddle.ui.main.contents.profile.view.activitys
 
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
@@ -77,6 +78,7 @@ class AnimalProfileActivity : BaseActivity<AnimalProfileViewModel>() {
     private fun observeViewModel() {
         viewModel.saveComplete.observe(this) { isComplete ->
             if (isComplete) {
+                setResult(Activity.RESULT_OK)
                 finish()
             }
         }

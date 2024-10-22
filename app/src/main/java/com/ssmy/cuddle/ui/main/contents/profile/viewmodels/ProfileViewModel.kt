@@ -10,7 +10,16 @@ import com.ssmy.cuddle.ui.main.contents.profile.model.data.Pet
 import com.ssmy.cuddle.ui.main.contents.profile.model.data.UserData
 import com.ssmy.cuddle.util.Constants.BIO_KEY
 import com.ssmy.cuddle.util.Constants.NICKNAME_KEY
+import com.ssmy.cuddle.util.Constants.PET_BIRTHDAY_KEY
+import com.ssmy.cuddle.util.Constants.PET_BREED_KEY
+import com.ssmy.cuddle.util.Constants.PET_DAYS_TOGETHER_KEY
+import com.ssmy.cuddle.util.Constants.PET_GENDER_KEY
+import com.ssmy.cuddle.util.Constants.PET_IDS_KEY
+import com.ssmy.cuddle.util.Constants.PET_IS_NEUTERED_KEY
+import com.ssmy.cuddle.util.Constants.PET_NAME_KEY
+import com.ssmy.cuddle.util.Constants.PET_WEIGHT_KEY
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class ProfileViewModel(
@@ -26,15 +35,55 @@ class ProfileViewModel(
 
     fun loadPets() {
         viewModelScope.launch {
-            val fetchedPets = fetchPetsFromApi()
+            val fetchedPets = fetchPetsFromDataStore()
             _pets.value = fetchedPets
         }
     }
 
-    private suspend fun fetchPetsFromApi(): List<Pet> {
-        return listOf(
+    private suspend fun fetchPetsFromDataStore(): List<Pet> {
+        val petIds = getPetIds()
+        val pets = mutableListOf<Pet>()
 
-        )
+        for (id in petIds) {
+            val idString = id.toString()
+
+            val nameFlow = dataStoreManager.getUserPreference(application, "${PET_NAME_KEY}_$idString", "")
+            val genderFlow = dataStoreManager.getUserPreference(application, "${PET_GENDER_KEY}_$idString", 0)
+            val breedFlow = dataStoreManager.getUserPreference(application, "${PET_BREED_KEY}_$idString", "")
+            val birthdayFlow = dataStoreManager.getUserPreference(application, "${PET_BIRTHDAY_KEY}_$idString", "")
+            val weightFlow = dataStoreManager.getUserPreference(application, "${PET_WEIGHT_KEY}_$idString", "")
+            val isNeuteredFlow = dataStoreManager.getUserPreference(application, "${PET_IS_NEUTERED_KEY}_$idString", false)
+            val daysTogetherFlow = dataStoreManager.getUserPreference(application, "${PET_DAYS_TOGETHER_KEY}_$idString", "")
+
+            val name = nameFlow.first() ?: ""
+            val gender = genderFlow.first() ?: 0
+            val breed = breedFlow.first() ?: ""
+            val birthday = birthdayFlow.first() ?: ""
+            val weight = weightFlow.first() ?: ""
+            val isNeutered = isNeuteredFlow.first() ?: false
+            val daysTogether = daysTogetherFlow.first() ?: ""
+
+            val pet = Pet(
+                id = id,
+                name = name,
+                gender = gender,
+                breed = breed,
+                birthday = birthday,
+                weight = weight,
+                isNeutered = isNeutered,
+                daysTogether = daysTogether
+            )
+
+            pets.add(pet)
+        }
+
+        return pets
+    }
+
+    private suspend fun getPetIds(): List<Int> {
+        val idsFlow = dataStoreManager.getUserPreference(application, PET_IDS_KEY, "")
+        val idsString = idsFlow.first() ?: ""
+        return idsString.split(",").mapNotNull { it.toIntOrNull() }.filter { it > 0 }
     }
 
     fun loadUserData() {

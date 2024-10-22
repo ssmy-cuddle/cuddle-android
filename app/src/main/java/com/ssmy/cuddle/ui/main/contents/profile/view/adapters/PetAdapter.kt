@@ -17,7 +17,7 @@ import com.ssmy.cuddle.ui.main.contents.profile.model.data.Pet
  * @since 9/9/24
  **/
 class PetAdapter(
-    private val pets: List<Pet>,
+    private var pets: List<Pet>,
     private val onEditPet: (Pet) -> Unit,
     private val onAddPet: () -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -62,7 +62,12 @@ class PetAdapter(
     }
 
     override fun getItemCount(): Int {
-        return pets.size + 1 // +1 for the Add Pet button
+        return pets.size + 1
+    }
+
+    fun updateData(newPets: List<Pet>) {
+        pets = newPets
+        notifyDataSetChanged()
     }
 
     inner class PetViewHolder(private val binding: ItemPetBinding) : RecyclerView.ViewHolder(binding.root) {

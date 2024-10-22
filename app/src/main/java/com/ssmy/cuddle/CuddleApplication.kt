@@ -13,6 +13,6 @@ class CuddleApplication : Application(){
         super.onCreate()
 
         // Kakao SDK 초기화
-        KakaoSdk.init(this, BuildConfig.KAKAO_APP_KEY)
+//        KakaoSdk.init(this, BuildConfig.KAKAO_APP_KEY)
     }
 }

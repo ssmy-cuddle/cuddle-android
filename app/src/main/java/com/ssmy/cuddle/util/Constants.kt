@@ -6,17 +6,18 @@ package com.ssmy.cuddle.util
  * @since 8/1/24
  **/
 object Constants {
-    const val LOGIN_TOKEN = "login_token"
+    const val LOGIN_TOKEN = "LOGIN_TOKEN"
 
-    const val NICKNAME_KEY = "nickname"
-    const val BIO_KEY = "bio"
+    const val NICKNAME_KEY = "NICKNAME"
+    const val BIO_KEY = "BIO"
 
-    const val PET_ID_KEY = "pet_id"
-    const val PET_NAME_KEY = "pet_name"
-    const val PET_GENDER_KEY = "pet_gender"
-    const val PET_BREED_KEY = "pet_breed"
-    const val PET_BIRTHDAY_KEY = "pet_birthday"
-    const val PET_WEIGHT_KEY = "pet_weight"
-    const val PET_IS_NEUTERED_KEY = "pet_is_neutered"
-    const val PET_DAYS_TOGETHER_KEY = "pet_days_together"
+    const val PET_NAME_KEY = "PET_NAME"
+    const val PET_GENDER_KEY = "PET_GENDER"
+    const val PET_BREED_KEY = "PET_BREED"
+    const val PET_BIRTHDAY_KEY = "PET_BIRTHDAY"
+    const val PET_WEIGHT_KEY = "PET_WEIGHT"
+    const val PET_IS_NEUTERED_KEY = "PET_IS_NEUTERED"
+    const val PET_DAYS_TOGETHER_KEY = "PET_DAYS_TOGETHER"
+    const val PET_IDS_KEY = "PET_IDS"
+    const val CURRENT_PET_ID_KEY = "CURRENT_PET_ID"
 }
