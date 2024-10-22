@@ -32,32 +32,8 @@ class ProfileViewModel(
     }
 
     private suspend fun fetchPetsFromApi(): List<Pet> {
-        // todo API
         return listOf(
-            Pet(
-                1,
-                "슝슝이",
-                "https://example.com/buddy.jpg",
-                0,
-                "기린",
-                "2024.05.20",
-                "25",
-                true,
-                "365",
-                false
-            ),
-            Pet(
-                2,
-                "미경이",
-                "https://example.com/luna.jpg",
-                1,
-                "코끼리",
-                "2024.09.21",
-                "20",
-                true,
-                "200",
-                false
-            )
+
         )
     }
 
@@ -73,5 +49,4 @@ class ProfileViewModel(
             }
         }
     }
-
 }
