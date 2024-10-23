@@ -1,7 +1,6 @@
 package com.ssmy.cuddle
 
 import android.app.Application
-import com.kakao.sdk.common.KakaoSdk
 
 /**
  * doc 주석

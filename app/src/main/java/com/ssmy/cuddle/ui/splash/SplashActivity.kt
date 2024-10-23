@@ -1,6 +1,5 @@
 package com.ssmy.cuddle.ui.splash
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -14,8 +13,6 @@ import com.ssmy.cuddle.ui.main.MainActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-
-@SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
 
     private val viewModel: SplashViewModel by viewModels {

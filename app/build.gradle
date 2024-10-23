@@ -28,9 +28,9 @@ android {
             minifyEnabled false
             debuggable true
 
-            resValue "string", "KAKAO_APP_KEY", properties["KAKAO_APP_KEY"]
-            buildConfigField "String", "KAKAO_APP_KEY", properties["KAKAO_APP_KEY"]
-            resValue "string", "KAKAO_SCHEME", properties["KAKAO_SCHEME"]
+//            resValue "string", "KAKAO_APP_KEY", properties["KAKAO_APP_KEY"]
+//            buildConfigField "String", "KAKAO_APP_KEY", properties["KAKAO_APP_KEY"]
+//            resValue "string", "KAKAO_SCHEME", properties["KAKAO_SCHEME"]
         }
 
         release {
@@ -39,9 +39,9 @@ android {
 
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
-            resValue "string", "KAKAO_APP_KEY", properties["KAKAO_APP_KEY"]
-            buildConfigField "String", "KAKAO_APP_KEY", properties["KAKAO_APP_KEY"]
-            resValue "string", "KAKAO_SCHEME", properties["KAKAO_SCHEME"]
+//            resValue "string", "KAKAO_APP_KEY", properties["KAKAO_APP_KEY"]
+//            buildConfigField "String", "KAKAO_APP_KEY", properties["KAKAO_APP_KEY"]
+//            resValue "string", "KAKAO_SCHEME", properties["KAKAO_SCHEME"]
         }
     }
 
@@ -83,15 +83,18 @@ dependencies {
     implementation "androidx.datastore:datastore-preferences:1.0.0"
 
     // kakao
-    implementation "com.kakao.sdk:v2-all:2.20.3" // 전체 모듈 설치, 2.11.0 버전부터 지원
+//    implementation "com.kakao.sdk:v2-all:2.20.3" // 전체 모듈 설치, 2.11.0 버전부터 지원
 
     // Photo Picker dependencies for multiple image selection (on Android API 33+)
     implementation 'androidx.activity:activity:1.6.1'
 
-    implementation 'com.squareup.retrofit2:retrofit:2.6.4'
-    implementation 'com.squareup.retrofit2:converter-gson:2.6.4'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.6.4'
+//    implementation 'com.squareup.retrofit2:retrofit:2.6.4'
+//    implementation 'com.squareup.retrofit2:converter-gson:2.6.4'
+//    implementation 'com.squareup.retrofit2:converter-scalars:2.6.4'
+
     implementation 'androidx.lifecycle:lifecycle-viewmodel-android:2.8.6'
+
+    implementation 'androidx.core:core-splashscreen:1.0.1'
 
     // Unit Testing
     testImplementation 'junit:junit:4.13.2'

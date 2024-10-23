@@ -32,20 +32,20 @@
         <activity
             android:name=".ui.main.contents.community.view.activitys.PostCreationActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+        <!--        <activity-->
+        <!--            android:name=".ui.login.LoginActivity"-->
+        <!--            android:exported="true">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.VIEW" />-->
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
+        <!--                <category android:name="android.intent.category.DEFAULT" />-->
+        <!--                <category android:name="android.intent.category.BROWSABLE" />-->
 
-                <data
-                    android:host="oauth"
-                    android:scheme="@string/KAKAO_SCHEME" />
-            </intent-filter>
-        </activity>
+        <!--                <data-->
+        <!--                    android:host="oauth"-->
+        <!--                    android:scheme="@string/KAKAO_SCHEME" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="false"
@@ -61,9 +61,9 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="com.kakao.sdk.AppKey"
-            android:value="@string/KAKAO_APP_KEY" />
+        <!--        <meta-data-->
+        <!--            android:name="com.kakao.sdk.AppKey"-->
+        <!--            android:value="@string/KAKAO_APP_KEY" />-->
     </application>
 
 </manifest>
