@@ -1,9 +1,5 @@
 package com.ssmy.cuddle.network
 
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-
 /**
  * doc 주석
  * @author wookjin

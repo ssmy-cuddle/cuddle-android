@@ -1,10 +1,5 @@
 package com.ssmy.cuddle.network
 
-import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.Headers
-import retrofit2.http.POST
-
 /**
  * doc 주석
  * @author wookjin
@@ -40,9 +35,9 @@ data class ValidationErrorDetail(
     val type: String
 )
 
-interface ApiService {
-
-    @Headers("Content-Type: application/json")
-    @POST("users/oauth/signup")
-    fun signUp(@Body signUpRequest: SignUpRequest): Call<SignUpResponse>
-}
+//interface ApiService {
+//
+//    @Headers("Content-Type: application/json")
+//    @POST("users/oauth/signup")
+//    fun signUp(@Body signUpRequest: SignUpRequest): Call<SignUpResponse>
+//}
