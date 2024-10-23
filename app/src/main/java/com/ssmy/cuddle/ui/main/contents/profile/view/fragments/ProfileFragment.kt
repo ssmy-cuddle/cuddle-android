@@ -32,6 +32,7 @@ class ProfileFragment : Fragment() {
     ) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             profileViewModel.loadPets()
+            profileViewModel.loadPetsCount()
         }
     }
 

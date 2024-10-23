@@ -94,7 +94,7 @@ class ProfileViewModel(
         return currentIdFlow.first()!!
     }
 
-    private fun loadPetsCount() {
+    fun loadPetsCount() {
         viewModelScope.launch {
             val currentId = getCurrentPetId()
             _petsCount.postValue(currentId)
